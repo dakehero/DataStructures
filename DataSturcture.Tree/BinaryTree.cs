@@ -6,7 +6,7 @@ namespace DataStructure.Tree
 {
     public class BinaryTree<T>
     {
-        public BinaryTreeNode<T> Root { get; private set; }
+        public BinaryTreeNode<T> Root { get; protected set; }
 
         public BinaryTree() { }
 
@@ -26,7 +26,7 @@ namespace DataStructure.Tree
             return GetDepth(Root);
         }
 
-        public int GetDepth(BinaryTreeNode<T> node)
+        private int GetDepth(BinaryTreeNode<T> node)
         {
             if (node == null)
             {
@@ -43,10 +43,12 @@ namespace DataStructure.Tree
         #region Traversals
         public void PreOrder(Action<BinaryTreeNode<T>> visitNode)
         {
+            if (IsEmpty())
+                throw new NullReferenceException("Empty Tree");
             PreOrder(Root, visitNode);
         }
 
-        public static void PreOrder(BinaryTreeNode<T> node, Action<BinaryTreeNode<T>> visitNode)
+        private void PreOrder(BinaryTreeNode<T> node, Action<BinaryTreeNode<T>> visitNode)
         {
 
             visitNode(node);
@@ -57,10 +59,12 @@ namespace DataStructure.Tree
 
         public void MidOrder(Action<BinaryTreeNode<T>> visitNode)
         {
+            if (IsEmpty())
+                throw new NullReferenceException("Empty Tree");
             MidOrder(Root, visitNode);
         }
 
-        public static void MidOrder(BinaryTreeNode<T> node, Action<BinaryTreeNode<T>> visitNode)
+        private void MidOrder(BinaryTreeNode<T> node, Action<BinaryTreeNode<T>> visitNode)
         {
             visitNode(node.LeftChild);
             visitNode(node);
@@ -69,10 +73,12 @@ namespace DataStructure.Tree
 
         public void PostOrder(Action<BinaryTreeNode<T>> visitNode)
         {
+            if (IsEmpty())
+                throw new NullReferenceException("Empty Tree");
             PostOrder(Root, visitNode);
         }
 
-        public static void PostOrder(BinaryTreeNode<T> node, Action<BinaryTreeNode<T>> visitNode)
+        private void PostOrder(BinaryTreeNode<T> node, Action<BinaryTreeNode<T>> visitNode)
         {
             visitNode(node.LeftChild);
             visitNode(node.RightChild);
@@ -81,6 +87,8 @@ namespace DataStructure.Tree
 
         public void LevelOrder(Action<BinaryTreeNode<T>> visitNode)
         {
+            if (IsEmpty())
+                throw new NullReferenceException("Empty Tree");
             LevelOrder(Root, visitNode);
         }
 
