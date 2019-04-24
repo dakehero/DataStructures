@@ -41,7 +41,7 @@ namespace DataStructure.Tree
         #endregion
 
         #region Traversals
-        public void PreOrder(Action<BinaryTreeNode<T>> visitNode)
+        public virtual void PreOrder(Action<BinaryTreeNode<T>> visitNode)
         {
             if (IsEmpty())
                 throw new NullReferenceException("Empty Tree");
@@ -57,7 +57,7 @@ namespace DataStructure.Tree
 
         }
 
-        public void MidOrder(Action<BinaryTreeNode<T>> visitNode)
+        public virtual void MidOrder(Action<BinaryTreeNode<T>> visitNode)
         {
             if (IsEmpty())
                 throw new NullReferenceException("Empty Tree");
@@ -71,7 +71,7 @@ namespace DataStructure.Tree
             visitNode(node.RightChild);
         }
 
-        public void PostOrder(Action<BinaryTreeNode<T>> visitNode)
+        public virtual void PostOrder(Action<BinaryTreeNode<T>> visitNode)
         {
             if (IsEmpty())
                 throw new NullReferenceException("Empty Tree");
@@ -85,7 +85,7 @@ namespace DataStructure.Tree
             visitNode(node);
         }
 
-        public void LevelOrder(Action<BinaryTreeNode<T>> visitNode)
+        virtual public void LevelOrder(Action<BinaryTreeNode<T>> visitNode)
         {
             if (IsEmpty())
                 throw new NullReferenceException("Empty Tree");
