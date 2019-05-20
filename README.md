@@ -1,2 +1,2 @@
 # DataStructures
-Normal DataSturctures in C Sharp
+DataSturctures in C Sharp
