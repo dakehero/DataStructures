@@ -42,7 +42,7 @@ namespace DataStructure.Tree
                 else
                     return node;
             }
-            return null;//you are not suppoesd to get here
+            return null;//not suppoesd to be here
         }
 
         public BinaryTreeNode<T> FindMin()

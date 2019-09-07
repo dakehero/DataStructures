@@ -39,12 +39,6 @@ namespace DataStructure.Tree
         }
 
         #region traversals
-        public override void PreOrder(Action<BinaryTreeNode<T>> visitNode)
-        {
-            if (IsEmpty())
-                throw new NullReferenceException("Empty Tree");
-            PreOrder(Root as BinaryThreadTreeNode<T> , visitNode);
-        }
 
         private void PreOrder(BinaryThreadTreeNode<T> node,Action<BinaryThreadTreeNode<T>> visitNode)
         {
@@ -55,13 +49,6 @@ namespace DataStructure.Tree
                 visitNode(node.RightChild as BinaryThreadTreeNode<T>);
         }
 
-        public override void MidOrder(Action<BinaryTreeNode<T>> visitNode)
-        {
-            if (IsEmpty())
-                throw new NullReferenceException("Empty Tree");
-            MidOrder(Root as BinaryThreadTreeNode<T>, visitNode);
-        }
-
         private void MidOrder(BinaryThreadTreeNode<T> node, Action<BinaryThreadTreeNode<T>> visitNode)
         {
             if(!node.IsLeftThread)
@@ -69,13 +56,6 @@ namespace DataStructure.Tree
             visitNode(node);
             if(!node.IsRightThread)
                 visitNode(node.RightChild as BinaryThreadTreeNode<T>);
-        }
-
-        public override void PostOrder(Action<BinaryTreeNode<T>> visitNode)
-        {
-            if (IsEmpty())
-                throw new NullReferenceException("Empty Tree");
-            PostOrder(Root as BinaryThreadTreeNode<T>, visitNode);
         }
 
         private void PostOrder(BinaryThreadTreeNode<T> node, Action<BinaryThreadTreeNode<T>> visitNode)
@@ -90,7 +70,6 @@ namespace DataStructure.Tree
 
         public void Threaded(TraversalType t)
         {
-            //Stack<BinaryThreadTreeNode<T>> nodeStack = new Stack<BinaryThreadTreeNode<T>>();
             var preNode = new BinaryThreadTreeNode<T>();
             if (t == TraversalType.PreOrder)
             {
@@ -164,6 +143,8 @@ namespace DataStructure.Tree
                     });
             }
         }
+
+
     }
 
 }
