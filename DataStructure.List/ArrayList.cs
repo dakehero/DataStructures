@@ -32,8 +32,10 @@ namespace DataStructure.List
 
         public IEnumerator<T> GetEnumerator()
         {
-            
-            throw new NotImplementedException();
+            foreach (var item in _itemsArray)
+            {
+                yield return item;//black magic by compiler which generates a Enumerator class
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -46,7 +48,7 @@ namespace DataStructure.List
             //when array is full
             if (_size == _itemsArray.Length)
             {
-                ExtendCapacity();
+                Resize();
             }
 
             _itemsArray[_size++] = item;
@@ -112,7 +114,7 @@ namespace DataStructure.List
             }
             if (_size == _itemsArray.Length)
             {
-                ExtendCapacity();
+                Resize();
             }
             //move all items
             for (int i = _size; i > index; i--)
@@ -127,6 +129,7 @@ namespace DataStructure.List
 
         public void RemoveAt(int index)
         {
+
             if (index < 0 || index >= _size)
             {
                 throw new IndexOutOfRangeException();
@@ -158,52 +161,13 @@ namespace DataStructure.List
             }
         }
 
-        private void ExtendCapacity()
+        private void Resize()
         {
             var newArray = new T[_itemsArray.Length * 2];
             _itemsArray.CopyTo(newArray,0);
             _itemsArray = newArray;
         }
 
-        private class ArrayListEnumerator: IEnumerator<T>,IEnumerator
-        {
-            private ArrayList<T> _array;
-            private int _currentIndex;
-
-            public ArrayListEnumerator(ArrayList<T> array)
-            {
-                _array = array;
-                _currentIndex = 0;
-                Current = array[_currentIndex];
-            }
-
-            public T Current { get; private set; }
-
-            object IEnumerator.Current => (object) Current;
-
-            public void Dispose()
-            {
-
-            }
-
-            public bool MoveNext()
-            {
-                if (_currentIndex < _array._size)
-                {
-                    Current = _array[++_currentIndex];
-                    return true;
-                }
-
-                return false;
-
-            }
-
-            public void Reset()
-            {
-                _currentIndex = 0;
-                Current = _array[_currentIndex];
-            }
-        }
 
     }
 }

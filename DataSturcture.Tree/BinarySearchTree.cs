@@ -42,7 +42,7 @@ namespace DataStructure.Tree
                 else
                     return node;
             }
-            return null;//not suppoesd to be here
+            return null;
         }
 
         public BinaryTreeNode<T> FindMin()
@@ -111,7 +111,7 @@ namespace DataStructure.Tree
                 node.RightChild = Remove(data, node.RightChild);
             else if (compareResult < 0)
                 node.LeftChild = Remove(data, node.LeftChild);
-            else if (node.RightChild != null && node.RightChild != null)
+            else if (node.RightChild != null && node.LeftChild != null)//data == node.data
             {
                 node.data = FindMin(node.RightChild).data;
                 node.RightChild = Remove(node.data, node.RightChild);

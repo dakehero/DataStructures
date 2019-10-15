@@ -4,11 +4,10 @@ using DataStructure.Tree;
 namespace DataStructures.Test
 {
     [TestFixture]
-    public class TreeTest
+    public class BinaryTreeTest
     {
-        //private readonly BinaryTree<int> _binaryTree;
-        
-        public TreeTest()
+
+        public BinaryTreeTest()
         {
             //_binaryTree = new BinaryTree<int>();
         }
@@ -30,6 +29,7 @@ namespace DataStructures.Test
             var result = binaryNode.IsLeafNode();
             Assert.IsTrue(result);
         }
+
 
 
     }

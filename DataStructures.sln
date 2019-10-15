@@ -6,8 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.Tree", "DataSturcture.Tree\DataStructure.Tree.csproj", "{E434F7C4-A7BA-43FB-870B-7ED70943D6BB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures.Test", "DataStructures.Test\DataStructures.Test.csproj", "{E3B105DA-8C89-4149-ABFF-D8933D759D7F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0CF71714-C291-4241-8D3F-54518FEDF8C4} = {0CF71714-C291-4241-8D3F-54518FEDF8C4}
+		{E434F7C4-A7BA-43FB-870B-7ED70943D6BB} = {E434F7C4-A7BA-43FB-870B-7ED70943D6BB}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure.List", "DataStructure.List\DataStructure.List.csproj", "{0CF71714-C291-4241-8D3F-54518FEDF8C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.List", "DataStructure.List\DataStructure.List.csproj", "{0CF71714-C291-4241-8D3F-54518FEDF8C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

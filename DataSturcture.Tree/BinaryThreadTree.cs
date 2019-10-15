@@ -70,14 +70,14 @@ namespace DataStructure.Tree
 
         public void Threaded(TraversalType t)
         {
-            var preNode = new BinaryThreadTreeNode<T>();
+            BinaryThreadTreeNode<T> preNode = null;
             if (t == TraversalType.PreOrder)
             {
                 PreOrder(Root as BinaryThreadTreeNode<T>,
                     (BinaryThreadTreeNode<T> node) =>
                     {
 
-                        if (preNode.IsRightThread)
+                        if (preNode != null && preNode.IsRightThread)
                         {
                             preNode.RightChild = node;
                         }
@@ -101,7 +101,7 @@ namespace DataStructure.Tree
                     (BinaryThreadTreeNode<T> node) =>
                     {
 
-                        if (preNode.IsRightThread)
+                        if (preNode != null && preNode.IsRightThread)
                         {
                             preNode.RightChild = node;
                         }
@@ -125,7 +125,7 @@ namespace DataStructure.Tree
                     (BinaryThreadTreeNode<T> node) =>
                     {
 
-                        if (preNode.IsRightThread)
+                        if (preNode != null && preNode.IsRightThread)
                         {
                             preNode.RightChild = node;
                         }
