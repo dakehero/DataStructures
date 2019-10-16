@@ -9,7 +9,7 @@ namespace DataStructure.Tree
 
         public bool IsLeftThread { get; set; }
         public bool IsRightThread { get; set; }
-
+        
         public BinaryThreadTreeNode() : base() { }
         public BinaryThreadTreeNode(T data)
         {
@@ -31,7 +31,7 @@ namespace DataStructure.Tree
     {
         //public new BinaryThreadTreeNode<T> Root { get; set; }
 
-        public BinaryThreadTree() : base() { }
+        public BinaryThreadTree(){ }
 
         public BinaryThreadTree(T data)
         {

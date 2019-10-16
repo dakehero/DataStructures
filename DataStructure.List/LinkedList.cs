@@ -87,6 +87,11 @@ namespace DataStructure.List
 
         public bool Contains(T item)
         {
+            if (item == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             var currentNode = _head.Next;
             while (currentNode != null)
             {
@@ -170,7 +175,7 @@ namespace DataStructure.List
         public void Insert(int index, T item)
         {
             if (index >= Count-1 || index < 0)
-                throw new IndexOutOfRangeException();
+                throw new ArgumentOutOfRangeException();
 
             var current = _head.Next;
             for (int i = 0; current != null; i++, current = current.Next)
@@ -195,7 +200,7 @@ namespace DataStructure.List
         public void RemoveAt(int index)
         {
             if (index >= Count || index < 0)
-                throw new IndexOutOfRangeException();
+                throw new ArgumentOutOfRangeException();
 
             var current = _head.Next;
 

@@ -8,7 +8,7 @@ namespace DataStructure.List
     public class ArrayList<T> :IList<T> where T:IEquatable<T>
     {
 
-        private const int DEFAULT_CAPACITY = 10;
+        private const int DefaultCapacity = 10;
 
         private T[] _itemsArray;
 
@@ -16,7 +16,7 @@ namespace DataStructure.List
 
         public ArrayList()
         {
-            _itemsArray = new T[DEFAULT_CAPACITY];
+            _itemsArray = new T[DefaultCapacity];
             _size = 0;
         }
 
@@ -58,11 +58,16 @@ namespace DataStructure.List
         public void Clear()
         {
             _size = 0;
-            _itemsArray = new T[DEFAULT_CAPACITY];
+            _itemsArray = new T[DefaultCapacity];
         }
 
         public bool Contains(T item)
         {
+            if (item == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             foreach (var arrayItem in _itemsArray)
             {
                 if (arrayItem.Equals(item))
