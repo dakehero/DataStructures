@@ -5,15 +5,11 @@ VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.Tree", "DataSturcture.Tree\DataStructure.Tree.csproj", "{E434F7C4-A7BA-43FB-870B-7ED70943D6BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures.Test", "DataStructures.Test\DataStructures.Test.csproj", "{E3B105DA-8C89-4149-ABFF-D8933D759D7F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{0CF71714-C291-4241-8D3F-54518FEDF8C4} = {0CF71714-C291-4241-8D3F-54518FEDF8C4}
-		{E434F7C4-A7BA-43FB-870B-7ED70943D6BB} = {E434F7C4-A7BA-43FB-870B-7ED70943D6BB}
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.List", "DataStructure.List\DataStructure.List.csproj", "{0CF71714-C291-4241-8D3F-54518FEDF8C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructure.Stack", "DataStructure.Stack\DataStructure.Stack.csproj", "{5A7AC2C9-526A-4FD4-985D-280DDD3A6D5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.Stack", "DataStructure.Stack\DataStructure.Stack.csproj", "{5A7AC2C9-526A-4FD4-985D-280DDD3A6D5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure.Queue", "DataStructure.Queue\DataStructure.Queue.csproj", "{F23C2B3C-053D-4222-A981-FF291BA41872}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +21,6 @@ Global
 		{E434F7C4-A7BA-43FB-870B-7ED70943D6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E434F7C4-A7BA-43FB-870B-7ED70943D6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E434F7C4-A7BA-43FB-870B-7ED70943D6BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3B105DA-8C89-4149-ABFF-D8933D759D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3B105DA-8C89-4149-ABFF-D8933D759D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3B105DA-8C89-4149-ABFF-D8933D759D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3B105DA-8C89-4149-ABFF-D8933D759D7F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0CF71714-C291-4241-8D3F-54518FEDF8C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0CF71714-C291-4241-8D3F-54518FEDF8C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CF71714-C291-4241-8D3F-54518FEDF8C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,6 +29,10 @@ Global
 		{5A7AC2C9-526A-4FD4-985D-280DDD3A6D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A7AC2C9-526A-4FD4-985D-280DDD3A6D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A7AC2C9-526A-4FD4-985D-280DDD3A6D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F23C2B3C-053D-4222-A981-FF291BA41872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F23C2B3C-053D-4222-A981-FF291BA41872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F23C2B3C-053D-4222-A981-FF291BA41872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F23C2B3C-053D-4222-A981-FF291BA41872}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

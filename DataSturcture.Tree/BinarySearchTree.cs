@@ -52,7 +52,7 @@ namespace DataStructure.Tree
             return FindMin(Root);
         }
 
-        private BinaryTreeNode<T> FindMin(BinaryTreeNode<T> node)
+        private  BinaryTreeNode<T> FindMin(BinaryTreeNode<T> node)
         {
             if (node != null)
                 while (node.LeftChild != null)
@@ -75,7 +75,7 @@ namespace DataStructure.Tree
             return node;
         }
 
-        public void Insert(T data)
+        public virtual void Insert(T data)
         {
             Root = Insert(data, Root);
         }
@@ -96,7 +96,7 @@ namespace DataStructure.Tree
 
         }
 
-        public void Remove(T data)
+        public virtual void Remove(T data)
         {
             Root = Remove(data, Root);
         }
