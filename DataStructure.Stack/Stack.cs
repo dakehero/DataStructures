@@ -10,11 +10,11 @@ namespace DataStructure.Stack
         private T[] _array;
         private int _size;
 
-        private const int InitialCapacity = 10;
+        private const int DefaultInitialCapacity = 10;
 
         public Stack()
         {
-            _array=new T[InitialCapacity];
+            _array=new T[DefaultInitialCapacity];
             _size = 0;
         }
 
@@ -76,10 +76,16 @@ namespace DataStructure.Stack
 
         public void CopyTo(T[] array, int arrayIndex)
         {
-            if (arrayIndex < 0 || arrayIndex > _array.Length)
+            if (arrayIndex < 0)
             {
                 throw new ArgumentOutOfRangeException();
             }
+            
+            if (array.Length - arrayIndex < _size)
+            {
+                throw new ArgumentException();
+            }
+
             try 
             {                
                 Array.Copy(_array, 0, array, arrayIndex, _size);
@@ -113,7 +119,7 @@ namespace DataStructure.Stack
         public void Push(T item)
         {
             if (_size == _array.Length) {
-                T[] newArray = new T[(_array.Length == 0) ? InitialCapacity : 2*_array.Length];
+                T[] newArray = new T[(_array.Length == 0) ? DefaultInitialCapacity : 2*_array.Length];
                 Array.Copy(_array, 0, newArray, 0, _size);
                 _array = newArray;
             }
@@ -122,6 +128,11 @@ namespace DataStructure.Stack
 
         public T[] ToArray()
         {
+            if (_size == 0)
+            {
+                return Array.Empty<T>();
+            }
+
             var newArray = new T[_size];
             Array.Copy(_array,0,newArray,0,_size);
             return newArray;
