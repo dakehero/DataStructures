@@ -173,6 +173,5 @@ namespace DataStructure.List
             _itemsArray = newArray;
         }
 
-
     }
 }
